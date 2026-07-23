@@ -166,18 +166,21 @@
       .button {
         display: inline-flex;
         align-items: center;
-        gap: 0.7rem;
-        padding: 0.9rem 1.15rem;
-        border-radius: 999px;
-        color: var(--black);
-        background: var(--ink);
-        font-size: 0.9rem;
-        font-weight: 760;
+        gap: 0.65rem;
+        min-width: 10.9rem;
+        padding: 0.52rem 1rem 0.56rem 0.76rem;
+        border: 1px solid rgb(255 255 255 / 40%);
+        border-radius: 0.78rem;
+        color: #fff;
+        background: #050505;
         transition: transform 180ms ease, background 180ms ease;
       }
 
-      .button:hover { background: var(--lemon); transform: translateY(-2px); }
-      .button span { font-size: 1.25rem; line-height: 0.7; }
+      .button:hover { background: #242222; transform: translateY(-2px); }
+      .button .apple-mark { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI Symbol", sans-serif; font-size: 1.86rem; line-height: 1; }
+      .app-store-copy { display: grid; gap: 0.04rem; line-height: 1; }
+      .app-store-copy small { font-size: 0.58rem; font-weight: 650; letter-spacing: 0.01em; }
+      .app-store-copy strong { font-size: 1.08rem; font-weight: 700; letter-spacing: -0.035em; }
 
       .hero-notes { display: flex; gap: 1.35rem; margin-top: 3.2rem; color: var(--muted); font-size: 0.76rem; }
       .hero-notes strong { display: block; margin-bottom: 0.25rem; color: var(--ink); font-size: 0.95rem; }
@@ -303,7 +306,10 @@
             <p class="eyebrow">IELTS Speaking practice</p>
             <h1 id="hero-title">Speak with more ease.</h1>
             <p>Build your answers with natural examples, useful vocabulary, and focused repetition that sounds like real conversation.</p>
-            <a class="button" href="#practice">Explore the practice flow <span aria-hidden="true">↘</span></a>
+            <a class="button" href="https://apps.apple.com/app/id6479511649" target="_blank" rel="noopener noreferrer" aria-label="Download Abby Speak on the App Store">
+              <span class="apple-mark" aria-hidden="true"></span>
+              <span class="app-store-copy"><small>Download on the</small><strong>App Store</strong></span>
+            </a>
             <div class="hero-notes" aria-label="Core app benefits">
               <div><strong>Natural</strong>sample answers</div>
               <div><strong>Practical</strong>speaking habits</div>
