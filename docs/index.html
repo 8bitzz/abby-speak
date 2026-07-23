@@ -9,6 +9,7 @@
     <meta property="og:description" content="Natural sample answers, practical vocabulary, and a speaking habit you can see.">
     <meta property="og:image" content="https://8bitzz.github.io/abby-speak/assets/screens/home.png">
     <meta name="twitter:card" content="summary_large_image">
+    <link rel="icon" href="assets/abby-speak-logo.png" type="image/png">
     <title>Abby Speak — IELTS Speaking Practice</title>
     <style>
       :root {
@@ -48,47 +49,6 @@
 
       .shell { width: min(100% - 3rem, 76rem); margin: 0 auto; }
 
-      .site-header {
-        position: absolute;
-        z-index: 5;
-        top: 0;
-        left: 0;
-        width: 100%;
-        padding: 1.35rem 0;
-      }
-
-      .nav {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        gap: 1rem;
-      }
-
-      .brand {
-        display: inline-flex;
-        align-items: center;
-        gap: 0.65rem;
-        font-size: 1.02rem;
-        font-weight: 780;
-        letter-spacing: -0.035em;
-      }
-
-      .brand-mark {
-        display: grid;
-        width: 2rem;
-        height: 2rem;
-        place-items: center;
-        border-radius: 0.7rem;
-        color: var(--black);
-        background: var(--orange);
-        font-size: 0.58rem;
-        font-weight: 900;
-        letter-spacing: -0.08em;
-      }
-
-      .nav-links { display: flex; gap: 1.35rem; color: var(--muted); font-size: 0.88rem; }
-      .nav-links a:hover { color: var(--ink); }
-
       .hero {
         position: relative;
         min-height: 52rem;
@@ -127,7 +87,7 @@
         min-height: 52rem;
         align-items: center;
         gap: 2rem;
-        padding: 8rem 0 3rem;
+        padding: 5.5rem 0 3rem;
       }
 
       .eyebrow {
@@ -143,6 +103,10 @@
       }
 
       .eyebrow::before { width: 0.52rem; height: 0.52rem; border-radius: 50%; background: currentColor; content: ""; }
+
+      .hero-brand { display: flex; align-items: center; gap: 0.8rem; margin-bottom: 1.25rem; }
+      .hero-brand .eyebrow { margin: 0; }
+      .hero-logo { display: block; width: 3.25rem; height: 3.25rem; border-radius: 0.9rem; box-shadow: 0 0.7rem 1.5rem rgb(0 0 0 / 26%); }
 
       h1, h2, h3, p { margin-top: 0; }
 
@@ -258,9 +222,8 @@
 
       @media (max-width: 760px) {
         .shell { width: min(100% - 2rem, 40rem); }
-        .nav-links a:not(:last-child) { display: none; }
         .hero, .hero-grid { min-height: auto; }
-        .hero-grid { grid-template-columns: 1fr; padding: 7.5rem 0 0; gap: 2.5rem; }
+        .hero-grid { grid-template-columns: 1fr; padding: 5rem 0 0; gap: 2.5rem; }
         .hero-copy { padding-bottom: 0; }
         .hero::before { top: -28rem; right: -23rem; width: 47rem; height: 47rem; }
         .device-hero { width: min(85%, 21rem); }
@@ -287,23 +250,14 @@
     </style>
   </head>
   <body>
-    <header class="site-header">
-      <div class="shell nav">
-        <a class="brand" href="#top" aria-label="Abby Speak home"><span class="brand-mark">AS</span> Abby Speak</a>
-        <nav class="nav-links" aria-label="Main navigation">
-          <a href="#practice">Practice</a>
-          <a href="#progress">Progress</a>
-          <a href="#library">Favourites</a>
-          <a href="privacy-policy/">Privacy</a>
-        </nav>
-      </div>
-    </header>
-
     <main id="top">
       <section class="hero" aria-labelledby="hero-title">
         <div class="shell hero-grid">
           <div class="hero-copy">
-            <p class="eyebrow">IELTS Speaking practice</p>
+            <div class="hero-brand">
+              <img class="hero-logo" src="assets/abby-speak-logo.png" width="1254" height="1254" alt="Abby Speak IELTS logo">
+              <p class="eyebrow">IELTS Speaking practice</p>
+            </div>
             <h1 id="hero-title">Speak with more ease.</h1>
             <p>Build your answers with natural examples, useful vocabulary, and focused repetition that sounds like real conversation.</p>
             <a class="button" href="https://apps.apple.com/app/id6479511649" target="_blank" rel="noopener noreferrer" aria-label="Download Abby Speak on the App Store">
