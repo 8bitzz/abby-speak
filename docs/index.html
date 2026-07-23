@@ -3,11 +3,435 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta http-equiv="refresh" content="0; url=terms-of-use/">
-    <link rel="canonical" href="terms-of-use/">
-    <title>Abby Speak Legal</title>
+    <meta name="description" content="Abby Speak helps IELTS learners practise natural answers, shadow fluent speech, and build a daily speaking habit.">
+    <meta name="theme-color" content="#090909">
+    <meta property="og:title" content="Abby Speak — IELTS speaking, every day.">
+    <meta property="og:description" content="Natural sample answers, practical vocabulary, and a speaking habit you can see.">
+    <meta property="og:image" content="https://8bitzz.github.io/abby-speak/assets/screens/slice-1.jpg">
+    <meta name="twitter:card" content="summary_large_image">
+    <title>Abby Speak — IELTS Speaking Practice</title>
+    <style>
+      :root {
+        color-scheme: dark;
+        --ink: #f8f4ee;
+        --muted: #b5ada3;
+        --black: #090909;
+        --panel: #141313;
+        --orange: #ff641c;
+        --orange-deep: #ee4a09;
+        --lavender: #d1b8f8;
+        --lemon: #f4f178;
+        --mint: #72e7ab;
+        --line: rgb(255 255 255 / 13%);
+      }
+
+      * { box-sizing: border-box; }
+
+      html { scroll-behavior: smooth; }
+
+      body {
+        min-width: 320px;
+        margin: 0;
+        overflow-x: hidden;
+        color: var(--ink);
+        background: var(--black);
+        font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      }
+
+      a { color: inherit; text-decoration: none; }
+
+      a:focus-visible {
+        outline: 3px solid var(--lemon);
+        outline-offset: 4px;
+      }
+
+      .shell { width: min(100% - 3rem, 76rem); margin: 0 auto; }
+
+      .site-header {
+        position: absolute;
+        z-index: 5;
+        top: 0;
+        left: 0;
+        width: 100%;
+        padding: 1.35rem 0;
+      }
+
+      .nav {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 1rem;
+      }
+
+      .brand {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.65rem;
+        font-size: 1.02rem;
+        font-weight: 780;
+        letter-spacing: -0.035em;
+      }
+
+      .brand-mark {
+        display: grid;
+        width: 2rem;
+        height: 2rem;
+        place-items: center;
+        border-radius: 0.7rem;
+        color: var(--black);
+        background: var(--orange);
+        font-size: 0.58rem;
+        font-weight: 900;
+        letter-spacing: -0.08em;
+      }
+
+      .nav-links { display: flex; gap: 1.35rem; color: var(--muted); font-size: 0.88rem; }
+      .nav-links a:hover { color: var(--ink); }
+
+      .hero {
+        position: relative;
+        min-height: 52rem;
+        overflow: hidden;
+        background: linear-gradient(127deg, #0b0b0b 0 48%, #14110f 48% 100%);
+      }
+
+      .hero::before {
+        position: absolute;
+        z-index: 0;
+        top: -25rem;
+        right: -15rem;
+        width: 54rem;
+        height: 54rem;
+        border-radius: 50%;
+        background: var(--orange);
+        content: "";
+      }
+
+      .hero::after {
+        position: absolute;
+        right: -9rem;
+        bottom: -14rem;
+        width: 38rem;
+        height: 38rem;
+        border: 1px solid rgb(255 255 255 / 16%);
+        border-radius: 50%;
+        content: "";
+      }
+
+      .hero-grid {
+        position: relative;
+        z-index: 1;
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) minmax(18rem, 0.86fr);
+        min-height: 52rem;
+        align-items: center;
+        gap: 2rem;
+        padding: 8rem 0 3rem;
+      }
+
+      .eyebrow {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.55rem;
+        margin: 0 0 1.25rem;
+        color: var(--orange);
+        font-size: 0.72rem;
+        font-weight: 850;
+        letter-spacing: 0.13em;
+        text-transform: uppercase;
+      }
+
+      .eyebrow::before { width: 0.52rem; height: 0.52rem; border-radius: 50%; background: currentColor; content: ""; }
+
+      h1, h2, h3, p { margin-top: 0; }
+
+      h1 {
+        max-width: 10ch;
+        margin-bottom: 1.4rem;
+        font-size: clamp(3.2rem, 7.4vw, 6.6rem);
+        font-weight: 620;
+        letter-spacing: -0.085em;
+        line-height: 0.91;
+      }
+
+      .hero-copy > p:not(.eyebrow) {
+        max-width: 31rem;
+        margin-bottom: 2rem;
+        color: var(--muted);
+        font-size: clamp(1rem, 1.5vw, 1.18rem);
+        line-height: 1.55;
+      }
+
+      .button {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.7rem;
+        padding: 0.9rem 1.15rem;
+        border-radius: 999px;
+        color: var(--black);
+        background: var(--ink);
+        font-size: 0.9rem;
+        font-weight: 760;
+        transition: transform 180ms ease, background 180ms ease;
+      }
+
+      .button:hover { background: var(--lemon); transform: translateY(-2px); }
+      .button span { font-size: 1.25rem; line-height: 0.7; }
+
+      .hero-notes { display: flex; gap: 1.35rem; margin-top: 3.2rem; color: var(--muted); font-size: 0.76rem; }
+      .hero-notes strong { display: block; margin-bottom: 0.25rem; color: var(--ink); font-size: 0.95rem; }
+
+      .device-hero {
+        position: relative;
+        justify-self: center;
+        width: min(100%, 23.5rem);
+        max-height: 40rem;
+        overflow: hidden;
+        border: 7px solid #2b2a2a;
+        border-radius: 2.85rem;
+        background: #121010;
+        box-shadow: 0 2rem 4.5rem rgb(0 0 0 / 48%);
+      }
+
+      .device-hero img { display: block; width: 100%; transform: translateY(-0.2%); }
+      .device-hero::after { position: absolute; inset: 0; border: 1px solid rgb(255 255 255 / 20%); border-radius: inherit; content: ""; pointer-events: none; }
+
+      .signal-strip { overflow: hidden; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); background: var(--orange); }
+      .signal-track { display: flex; width: max-content; padding: 0.78rem 0; color: var(--black); font-size: 0.78rem; font-weight: 850; letter-spacing: 0.12em; text-transform: uppercase; }
+      .signal-track span { display: inline-flex; align-items: center; gap: 1.1rem; padding-right: 1.1rem; }
+      .signal-track span::after { width: 0.38rem; height: 0.38rem; border-radius: 50%; background: currentColor; content: ""; }
+
+      .intro { padding: clamp(5.5rem, 12vw, 10rem) 0 4rem; }
+      .intro-grid { display: grid; grid-template-columns: 0.7fr 1.3fr; gap: 2rem; align-items: start; }
+      .intro h2, .section-heading h2 { margin-bottom: 0; font-size: clamp(2.25rem, 5.3vw, 4.55rem); font-weight: 610; letter-spacing: -0.075em; line-height: 0.96; }
+      .intro p { max-width: 37rem; margin: 0.6rem 0 0; color: var(--muted); font-size: clamp(1.1rem, 1.85vw, 1.42rem); line-height: 1.42; }
+
+      .feature { position: relative; overflow: hidden; }
+      .feature.orange { background: var(--orange); color: var(--black); }
+      .feature.black { background: var(--black); }
+      .feature-inner { display: grid; grid-template-columns: minmax(0, 1fr) minmax(18rem, 0.87fr); align-items: center; gap: clamp(2rem, 6vw, 6rem); min-height: 48rem; padding: 4rem 0; }
+      .feature.reverse .feature-copy { order: 2; }
+      .feature.reverse .screen-pair { order: 1; }
+
+      .feature-copy { position: relative; z-index: 1; }
+      .feature-number { margin: 0 0 1rem; color: currentColor; font-size: 0.75rem; font-weight: 830; letter-spacing: 0.13em; opacity: 0.62; }
+      .feature-copy h2 { max-width: 8.5ch; margin-bottom: 1.25rem; font-size: clamp(2.75rem, 6vw, 5.35rem); font-weight: 620; letter-spacing: -0.085em; line-height: 0.9; }
+      .feature-copy p:not(.feature-number) { max-width: 28rem; margin-bottom: 0; color: inherit; font-size: 1.1rem; line-height: 1.48; opacity: 0.7; }
+
+      .screen-pair { position: relative; min-height: 37rem; display: grid; place-items: center; }
+      .screen { position: absolute; width: min(78%, 21rem); overflow: hidden; border: 6px solid #252424; border-radius: 2.25rem; background: #111; box-shadow: 0 1.7rem 3.5rem rgb(0 0 0 / 36%); }
+      .screen img { display: block; width: 100%; }
+      .screen::after { position: absolute; inset: 0; border: 1px solid rgb(255 255 255 / 18%); border-radius: inherit; content: ""; pointer-events: none; }
+      .screen.back { transform: translate(-17%, 7%) rotate(-5deg); opacity: 0.85; }
+      .screen.front { transform: translate(15%, -7%) rotate(4deg); }
+      .orange .screen { border-color: #2a1e19; }
+      .orange::before { position: absolute; top: -20rem; left: -12rem; width: 47rem; height: 47rem; border: 2px solid rgb(0 0 0 / 14%); border-radius: 50%; content: ""; }
+
+      .practice { padding: clamp(5rem, 10vw, 9rem) 0; background: #111010; }
+      .section-heading { display: flex; align-items: end; justify-content: space-between; gap: 2rem; margin-bottom: 3rem; }
+      .section-heading p { max-width: 22rem; margin: 0; color: var(--muted); line-height: 1.5; }
+      .practice-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; }
+      .practice-card { min-height: 19rem; padding: 1.45rem; border: 1px solid var(--line); border-radius: 1.5rem; background: #191818; }
+      .practice-card:nth-child(1) { background: var(--lavender); color: #1a151d; }
+      .practice-card:nth-child(2) { background: var(--lemon); color: #1c1a10; }
+      .practice-card:nth-child(3) { background: var(--mint); color: #112419; }
+      .practice-card span { display: block; margin-bottom: 3.5rem; font-size: 0.76rem; font-weight: 800; letter-spacing: 0.1em; text-transform: uppercase; opacity: 0.65; }
+      .practice-card h3 { max-width: 8ch; margin: 0; font-size: clamp(1.7rem, 3vw, 2.35rem); font-weight: 650; letter-spacing: -0.065em; line-height: 0.95; }
+
+      .library { position: relative; overflow: hidden; padding: clamp(5.5rem, 11vw, 10rem) 0; background: var(--orange-deep); color: var(--ink); }
+      .library::after { position: absolute; right: -14rem; bottom: -20rem; width: 46rem; height: 46rem; border-radius: 50%; background: var(--black); content: ""; }
+      .library .section-heading { position: relative; z-index: 1; }
+      .library .section-heading p { color: rgb(255 255 255 / 76%); }
+      .library-screens { position: relative; z-index: 1; display: grid; grid-template-columns: 1fr 1fr; gap: clamp(1rem, 4vw, 3rem); max-width: 53rem; margin: 0 auto; }
+      .library-screens figure { margin: 0; overflow: hidden; border: 7px solid #23110b; border-radius: 2.3rem; box-shadow: 0 1.8rem 4rem rgb(0 0 0 / 28%); }
+      .library-screens img { display: block; width: 100%; }
+      .library-screens figure:last-child { transform: translateY(4.5rem); }
+
+      .final { position: relative; overflow: hidden; padding: clamp(6rem, 13vw, 11rem) 0; background: #090909; }
+      .final::before { position: absolute; left: -16rem; bottom: -18rem; width: 45rem; height: 45rem; border: 1px solid rgb(255 255 255 / 16%); border-radius: 50%; content: ""; }
+      .final-inner { position: relative; z-index: 1; display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 3rem; align-items: end; }
+      .final h2 { max-width: 10ch; margin: 0; font-size: clamp(3rem, 7vw, 6rem); font-weight: 610; letter-spacing: -0.09em; line-height: 0.9; }
+      .final aside { padding: 1.5rem; border-radius: 1.5rem; background: var(--orange); color: var(--black); }
+      .final aside p { margin: 0; font-size: 1.1rem; font-weight: 650; line-height: 1.35; }
+      .final aside a { display: inline-flex; margin-top: 1.3rem; font-size: 0.86rem; font-weight: 800; text-decoration: underline; text-underline-offset: 0.22em; }
+
+      footer { padding: 1.65rem 0; border-top: 1px solid var(--line); background: var(--black); }
+      .footer-inner { display: flex; align-items: center; justify-content: space-between; gap: 1.5rem; color: var(--muted); font-size: 0.82rem; }
+      .footer-links { display: flex; gap: 1.15rem; }
+      .footer-links a:hover { color: var(--ink); }
+
+      @media (max-width: 760px) {
+        .shell { width: min(100% - 2rem, 40rem); }
+        .nav-links a:not(:last-child) { display: none; }
+        .hero, .hero-grid { min-height: auto; }
+        .hero-grid { grid-template-columns: 1fr; padding: 7.5rem 0 0; gap: 2.5rem; }
+        .hero-copy { padding-bottom: 0; }
+        .hero::before { top: -28rem; right: -23rem; width: 47rem; height: 47rem; }
+        .device-hero { width: min(85%, 22rem); max-height: 35rem; }
+        .hero-notes { margin-top: 2.25rem; }
+        .intro-grid, .feature-inner, .final-inner { grid-template-columns: 1fr; }
+        .intro-grid { gap: 0.9rem; }
+        .feature-inner { min-height: auto; padding: 5rem 0; }
+        .feature.reverse .feature-copy, .feature.reverse .screen-pair { order: initial; }
+        .feature-copy h2 { max-width: 10ch; }
+        .screen-pair { min-height: 29rem; }
+        .screen { width: min(78%, 17rem); }
+        .practice-grid { grid-template-columns: 1fr; }
+        .practice-card { min-height: 13rem; }
+        .practice-card span { margin-bottom: 2rem; }
+        .section-heading { display: block; margin-bottom: 2rem; }
+        .section-heading p { margin-top: 1rem; }
+        .library-screens { gap: 0.75rem; }
+        .library-screens figure { border-width: 4px; border-radius: 1.45rem; }
+        .footer-inner { align-items: flex-start; flex-direction: column; }
+      }
+
+      @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } .button { transition: none; } }
+    </style>
   </head>
   <body>
-    <p><a href="terms-of-use/">Open Abby Speak Terms of Use</a></p>
+    <header class="site-header">
+      <div class="shell nav">
+        <a class="brand" href="#top" aria-label="Abby Speak home"><span class="brand-mark">AS</span> Abby Speak</a>
+        <nav class="nav-links" aria-label="Main navigation">
+          <a href="#practice">Practice</a>
+          <a href="#progress">Progress</a>
+          <a href="#library">Library</a>
+          <a href="privacy-policy/">Privacy</a>
+        </nav>
+      </div>
+    </header>
+
+    <main id="top">
+      <section class="hero" aria-labelledby="hero-title">
+        <div class="shell hero-grid">
+          <div class="hero-copy">
+            <p class="eyebrow">IELTS Speaking practice</p>
+            <h1 id="hero-title">Speak with more ease.</h1>
+            <p>Build your answers with natural examples, useful vocabulary, and focused repetition that sounds like real conversation.</p>
+            <a class="button" href="#practice">Explore the practice flow <span aria-hidden="true">↘</span></a>
+            <div class="hero-notes" aria-label="Core app benefits">
+              <div><strong>Natural</strong>sample answers</div>
+              <div><strong>Practical</strong>speaking habits</div>
+              <div><strong>Focused</strong>IELTS topics</div>
+            </div>
+          </div>
+          <div class="device-hero">
+            <img src="assets/screens/slice-1.jpg" width="739" height="1600" alt="Abby Speak home screen showing colourful IELTS speaking topic cards">
+          </div>
+        </div>
+      </section>
+
+      <div class="signal-strip" aria-hidden="true">
+        <div class="signal-track">
+          <span>Say it naturally</span><span>Build your answer</span><span>Keep your streak</span><span>Say it naturally</span><span>Build your answer</span><span>Keep your streak</span>
+        </div>
+      </div>
+
+      <section class="intro shell" aria-labelledby="intro-title">
+        <div class="intro-grid">
+          <p class="eyebrow">A calmer way to practise</p>
+          <div>
+            <h2 id="intro-title">Small, repeatable sessions. Real progress you can hear.</h2>
+            <p>Abby Speak turns the parts of IELTS speaking that feel overwhelming into a simple daily practice loop.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="feature orange" id="practice" aria-labelledby="answers-title">
+        <div class="shell feature-inner">
+          <div class="feature-copy">
+            <p class="feature-number">01 — Answers that sound human</p>
+            <h2 id="answers-title">Find your natural flow.</h2>
+            <p>Practise with sample answers that give you a clear direction, then make the language your own.</p>
+          </div>
+          <div class="screen-pair" aria-label="Answer practice screens">
+            <div class="screen back"><img src="assets/screens/slice-2.jpg" width="739" height="1600" loading="lazy" alt="An IELTS Part 1 accommodation speaking prompt"></div>
+            <div class="screen front"><img src="assets/screens/slice-3.jpg" width="739" height="1600" loading="lazy" alt="A sample answer with playback controls for speaking practice"></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="feature black reverse" aria-labelledby="shadow-title">
+        <div class="shell feature-inner">
+          <div class="feature-copy">
+            <p class="feature-number">02 — Hear, repeat, improve</p>
+            <h2 id="shadow-title">Shadow fluent speech.</h2>
+            <p>Listen closely, repeat with intention, and become more comfortable linking your ideas in a natural rhythm.</p>
+          </div>
+          <div class="screen-pair" aria-label="Vocabulary learning screen">
+            <div class="screen back"><img src="assets/screens/slice-4.jpg" width="739" height="1600" loading="lazy" alt="Topic vocabulary cards with definitions and example sentences"></div>
+            <div class="screen front"><img src="assets/screens/slice-8.jpg" width="739" height="1600" loading="lazy" alt="Useful sentence templates displayed in the Abby Speak app"></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="practice" id="progress" aria-labelledby="progress-title">
+        <div class="shell">
+          <div class="section-heading">
+            <div>
+              <p class="eyebrow">Keep the momentum</p>
+              <h2 id="progress-title">Your practice has a pulse.</h2>
+            </div>
+            <p>Use reminders and a visible streak to make speaking practice part of your day—not another task you postpone.</p>
+          </div>
+          <div class="practice-grid">
+            <article class="practice-card"><span>Remember</span><h3>Set your moment to speak.</h3></article>
+            <article class="practice-card"><span>Return</span><h3>Build a habit, one day at a time.</h3></article>
+            <article class="practice-card"><span>Reflect</span><h3>See the sessions adding up.</h3></article>
+          </div>
+        </div>
+      </section>
+
+      <section class="feature orange" aria-labelledby="streak-title">
+        <div class="shell feature-inner">
+          <div class="feature-copy">
+            <p class="feature-number">03 — A habit you can see</p>
+            <h2 id="streak-title">Track every step forward.</h2>
+            <p>From reminders to activity history, Abby Speak keeps your small wins close enough to keep going.</p>
+          </div>
+          <div class="screen-pair" aria-label="Progress tracking screens">
+            <div class="screen back"><img src="assets/screens/slice-6.jpg" width="739" height="1600" loading="lazy" alt="Reminder settings screen in Abby Speak"></div>
+            <div class="screen front"><img src="assets/screens/slice-7.jpg" width="739" height="1600" loading="lazy" alt="Days streak screen with an activity calendar"></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="library" id="library" aria-labelledby="library-title">
+        <div class="shell">
+          <div class="section-heading">
+            <div>
+              <p class="eyebrow">Always find your next prompt</p>
+              <h2 id="library-title">A deep library, made easy to use.</h2>
+            </div>
+            <p>Save questions you want to revisit, browse by topic, and search when the right practice prompt is on your mind.</p>
+          </div>
+          <div class="library-screens">
+            <figure><img src="assets/screens/slice-9.jpg" width="739" height="1600" loading="lazy" alt="Favourite IELTS speaking questions in Abby Speak"></figure>
+            <figure><img src="assets/screens/slice-10.jpg" width="739" height="1600" loading="lazy" alt="Search screen for filtering IELTS speaking questions"></figure>
+          </div>
+        </div>
+      </section>
+
+      <section class="final" aria-labelledby="final-title">
+        <div class="shell final-inner">
+          <h2 id="final-title">Make your next answer sound like you.</h2>
+          <aside>
+            <p>Natural examples. Useful language. A practice habit that stays with you.</p>
+            <a href="#top">Back to the top ↑</a>
+          </aside>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="shell footer-inner">
+        <span>© 2026 Abby Speak</span>
+        <nav class="footer-links" aria-label="Legal navigation">
+          <a href="privacy-policy/">Privacy Policy</a>
+          <a href="terms-of-use/">Terms of Use</a>
+        </nav>
+      </div>
+    </footer>
   </body>
 </html>
