@@ -7,7 +7,7 @@
     <meta name="theme-color" content="#090909">
     <meta property="og:title" content="Abby Speak — IELTS speaking, every day.">
     <meta property="og:description" content="Natural sample answers, practical vocabulary, and a speaking habit you can see.">
-    <meta property="og:image" content="https://8bitzz.github.io/abby-speak/assets/screens/slice-1.jpg">
+    <meta property="og:image" content="https://8bitzz.github.io/abby-speak/assets/screens/home.jpg">
     <meta name="twitter:card" content="summary_large_image">
     <title>Abby Speak — IELTS Speaking Practice</title>
     <style>
@@ -224,6 +224,7 @@
       .screen::after { position: absolute; inset: 0; border: 1px solid rgb(255 255 255 / 18%); border-radius: inherit; content: ""; pointer-events: none; }
       .screen.back { transform: translate(-17%, 7%) rotate(-5deg); opacity: 0.85; }
       .screen.front { transform: translate(15%, -7%) rotate(4deg); }
+      .screen-pair .screen:only-child { position: relative; transform: rotate(3deg); }
       .orange .screen { border-color: #2a1e19; }
       .orange::before { position: absolute; top: -20rem; left: -12rem; width: 47rem; height: 47rem; border: 2px solid rgb(0 0 0 / 14%); border-radius: 50%; content: ""; }
 
@@ -246,6 +247,8 @@
       .library-screens figure { margin: 0; overflow: hidden; border: 7px solid #23110b; border-radius: 2.3rem; box-shadow: 0 1.8rem 4rem rgb(0 0 0 / 28%); }
       .library-screens img { display: block; width: 100%; }
       .library-screens figure:last-child { transform: translateY(4.5rem); }
+      .library-screens.single { grid-template-columns: minmax(0, 26rem); justify-content: center; }
+      .library-screens.single figure:last-child { transform: none; }
 
       .final { position: relative; overflow: hidden; padding: clamp(6rem, 13vw, 11rem) 0; background: #090909; }
       .final::before { position: absolute; left: -16rem; bottom: -18rem; width: 45rem; height: 45rem; border: 1px solid rgb(255 255 255 / 16%); border-radius: 50%; content: ""; }
@@ -296,7 +299,7 @@
         <nav class="nav-links" aria-label="Main navigation">
           <a href="#practice">Practice</a>
           <a href="#progress">Progress</a>
-          <a href="#library">Library</a>
+          <a href="#library">Favourites</a>
           <a href="privacy-policy/">Privacy</a>
         </nav>
       </div>
@@ -317,7 +320,7 @@
             </div>
           </div>
           <div class="device-hero">
-            <img src="assets/screens/slice-1.jpg" width="739" height="1600" alt="Abby Speak home screen showing colourful IELTS speaking topic cards">
+            <img src="assets/screens/home.jpg" width="736" height="1600" alt="Abby Speak home screen showing colourful IELTS speaking topic cards">
           </div>
         </div>
       </section>
@@ -346,8 +349,7 @@
             <p>Practise with sample answers that give you a clear direction, then make the language your own.</p>
           </div>
           <div class="screen-pair" aria-label="Answer practice screens">
-            <div class="screen back"><img src="assets/screens/slice-2.jpg" width="739" height="1600" loading="lazy" alt="An IELTS Part 1 accommodation speaking prompt"></div>
-            <div class="screen front"><img src="assets/screens/slice-3.jpg" width="739" height="1600" loading="lazy" alt="A sample answer with playback controls for speaking practice"></div>
+            <div class="screen front"><img src="assets/screens/sample-answer.jpg" width="736" height="1600" loading="lazy" alt="A sample answer with playback controls for speaking practice"></div>
           </div>
         </div>
       </section>
@@ -355,13 +357,13 @@
       <section class="feature black reverse" aria-labelledby="shadow-title">
         <div class="shell feature-inner">
           <div class="feature-copy">
-            <p class="feature-number">02 — Hear, repeat, improve</p>
-            <h2 id="shadow-title">Shadow fluent speech.</h2>
-            <p>Listen closely, repeat with intention, and become more comfortable linking your ideas in a natural rhythm.</p>
+            <p class="feature-number">02 — Language for real answers</p>
+            <h2 id="shadow-title">Build language you will use.</h2>
+            <p>Explore topic vocabulary and ready-to-adapt sentence patterns, so your answers feel clear, natural, and your own.</p>
           </div>
-          <div class="screen-pair" aria-label="Vocabulary learning screen">
-            <div class="screen back"><img src="assets/screens/slice-4.jpg" width="739" height="1600" loading="lazy" alt="Topic vocabulary cards with definitions and example sentences"></div>
-            <div class="screen front"><img src="assets/screens/slice-8.jpg" width="739" height="1600" loading="lazy" alt="Useful sentence templates displayed in the Abby Speak app"></div>
+          <div class="screen-pair" aria-label="Vocabulary and useful sentence screens">
+            <div class="screen back"><img src="assets/screens/vocabulary.jpg" width="736" height="1600" loading="lazy" alt="Topic vocabulary cards with definitions and example sentences"></div>
+            <div class="screen front"><img src="assets/screens/useful-sentences.jpg" width="736" height="1600" loading="lazy" alt="Useful sentence templates displayed in the Abby Speak app"></div>
           </div>
         </div>
       </section>
@@ -391,8 +393,8 @@
             <p>From reminders to activity history, Abby Speak keeps your small wins close enough to keep going.</p>
           </div>
           <div class="screen-pair" aria-label="Progress tracking screens">
-            <div class="screen back"><img src="assets/screens/slice-6.jpg" width="739" height="1600" loading="lazy" alt="Reminder settings screen in Abby Speak"></div>
-            <div class="screen front"><img src="assets/screens/slice-7.jpg" width="739" height="1600" loading="lazy" alt="Days streak screen with an activity calendar"></div>
+            <div class="screen back"><img src="assets/screens/settings.jpg" width="736" height="1600" loading="lazy" alt="Reminder settings screen in Abby Speak"></div>
+            <div class="screen front"><img src="assets/screens/days-streak.jpg" width="736" height="1600" loading="lazy" alt="Days streak screen with an activity calendar"></div>
           </div>
         </div>
       </section>
@@ -401,14 +403,13 @@
         <div class="shell">
           <div class="section-heading">
             <div>
-              <p class="eyebrow">Always find your next prompt</p>
-              <h2 id="library-title">A deep library, made easy to use.</h2>
+              <p class="eyebrow">Return to the prompts that matter</p>
+              <h2 id="library-title">Keep your favourite questions close.</h2>
             </div>
-            <p>Save questions you want to revisit, browse by topic, and search when the right practice prompt is on your mind.</p>
+            <p>Save speaking prompts you want to practise again, so the next focused session is always within reach.</p>
           </div>
-          <div class="library-screens">
-            <figure><img src="assets/screens/slice-9.jpg" width="739" height="1600" loading="lazy" alt="Favourite IELTS speaking questions in Abby Speak"></figure>
-            <figure><img src="assets/screens/slice-10.jpg" width="739" height="1600" loading="lazy" alt="Search screen for filtering IELTS speaking questions"></figure>
+          <div class="library-screens single">
+            <figure><img src="assets/screens/favorites.jpg" width="736" height="1600" loading="lazy" alt="Favourite IELTS speaking questions in Abby Speak"></figure>
           </div>
         </div>
       </section>
