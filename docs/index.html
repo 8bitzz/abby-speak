@@ -7,7 +7,7 @@
     <meta name="theme-color" content="#090909">
     <meta property="og:title" content="Abby Speak — IELTS speaking, every day.">
     <meta property="og:description" content="Natural sample answers, practical vocabulary, and a speaking habit you can see.">
-    <meta property="og:image" content="https://8bitzz.github.io/abby-speak/assets/screens/home.jpg">
+    <meta property="og:image" content="https://8bitzz.github.io/abby-speak/assets/screens/home.png">
     <meta name="twitter:card" content="summary_large_image">
     <title>Abby Speak — IELTS Speaking Practice</title>
     <style>
@@ -26,6 +26,7 @@
       }
 
       * { box-sizing: border-box; }
+      img { max-width: 100%; height: auto; }
 
       html { scroll-behavior: smooth; }
 
@@ -182,19 +183,12 @@
       .hero-notes strong { display: block; margin-bottom: 0.25rem; color: var(--ink); font-size: 0.95rem; }
 
       .device-hero {
-        position: relative;
         justify-self: center;
-        width: min(100%, 23.5rem);
-        max-height: 40rem;
-        overflow: hidden;
-        border: 7px solid #2b2a2a;
-        border-radius: 2.85rem;
-        background: #121010;
+        width: min(100%, 21rem);
         box-shadow: 0 2rem 4.5rem rgb(0 0 0 / 48%);
       }
 
-      .device-hero img { display: block; width: 100%; transform: translateY(-0.2%); }
-      .device-hero::after { position: absolute; inset: 0; border: 1px solid rgb(255 255 255 / 20%); border-radius: inherit; content: ""; pointer-events: none; }
+      .device-hero img { display: block; width: 100%; height: auto; border-radius: 2.55rem; }
 
       .signal-strip { overflow: hidden; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); background: var(--orange); }
       .signal-track { display: flex; width: max-content; padding: 0.78rem 0; color: var(--black); font-size: 0.78rem; font-weight: 850; letter-spacing: 0.12em; text-transform: uppercase; }
@@ -218,14 +212,10 @@
       .feature-copy h2 { max-width: 8.5ch; margin-bottom: 1.25rem; font-size: clamp(2.75rem, 6vw, 5.35rem); font-weight: 620; letter-spacing: -0.085em; line-height: 0.9; }
       .feature-copy p:not(.feature-number) { max-width: 28rem; margin-bottom: 0; color: inherit; font-size: 1.1rem; line-height: 1.48; opacity: 0.7; }
 
-      .screen-pair { position: relative; min-height: 37rem; display: grid; place-items: center; }
-      .screen { position: absolute; width: min(78%, 21rem); overflow: hidden; border: 6px solid #252424; border-radius: 2.25rem; background: #111; box-shadow: 0 1.7rem 3.5rem rgb(0 0 0 / 36%); }
-      .screen img { display: block; width: 100%; }
-      .screen::after { position: absolute; inset: 0; border: 1px solid rgb(255 255 255 / 18%); border-radius: inherit; content: ""; pointer-events: none; }
-      .screen.back { transform: translate(-17%, 7%) rotate(-5deg); opacity: 0.85; }
-      .screen.front { transform: translate(15%, -7%) rotate(4deg); }
-      .screen-pair .screen:only-child { position: relative; transform: rotate(3deg); }
-      .orange .screen { border-color: #2a1e19; }
+      .screen-pair { display: flex; align-items: flex-start; justify-content: center; gap: clamp(0.8rem, 2vw, 1.35rem); padding: 1rem 0; }
+      .screen { flex: 0 1 15rem; width: min(45%, 15rem); box-shadow: 0 1.7rem 3.5rem rgb(0 0 0 / 36%); }
+      .screen img { display: block; width: 100%; height: auto; border-radius: 2.15rem; }
+      .screen-pair .screen:only-child { flex-basis: 21rem; width: min(100%, 21rem); }
       .orange::before { position: absolute; top: -20rem; left: -12rem; width: 47rem; height: 47rem; border: 2px solid rgb(0 0 0 / 14%); border-radius: 50%; content: ""; }
 
       .practice { padding: clamp(5rem, 10vw, 9rem) 0; background: #111010; }
@@ -244,8 +234,8 @@
       .library .section-heading { position: relative; z-index: 1; }
       .library .section-heading p { color: rgb(255 255 255 / 76%); }
       .library-screens { position: relative; z-index: 1; display: grid; grid-template-columns: 1fr 1fr; gap: clamp(1rem, 4vw, 3rem); max-width: 53rem; margin: 0 auto; }
-      .library-screens figure { margin: 0; overflow: hidden; border: 7px solid #23110b; border-radius: 2.3rem; box-shadow: 0 1.8rem 4rem rgb(0 0 0 / 28%); }
-      .library-screens img { display: block; width: 100%; }
+      .library-screens figure { margin: 0; box-shadow: 0 1.8rem 4rem rgb(0 0 0 / 28%); }
+      .library-screens img { display: block; width: 100%; height: auto; border-radius: 2.3rem; }
       .library-screens figure:last-child { transform: translateY(4.5rem); }
       .library-screens.single { grid-template-columns: minmax(0, 26rem); justify-content: center; }
       .library-screens.single figure:last-child { transform: none; }
@@ -270,15 +260,16 @@
         .hero-grid { grid-template-columns: 1fr; padding: 7.5rem 0 0; gap: 2.5rem; }
         .hero-copy { padding-bottom: 0; }
         .hero::before { top: -28rem; right: -23rem; width: 47rem; height: 47rem; }
-        .device-hero { width: min(85%, 22rem); max-height: 35rem; }
+        .device-hero { width: min(85%, 21rem); }
         .hero-notes { margin-top: 2.25rem; }
         .intro-grid, .feature-inner, .final-inner { grid-template-columns: 1fr; }
         .intro-grid { gap: 0.9rem; }
         .feature-inner { min-height: auto; padding: 5rem 0; }
         .feature.reverse .feature-copy, .feature.reverse .screen-pair { order: initial; }
         .feature-copy h2 { max-width: 10ch; }
-        .screen-pair { min-height: 29rem; }
-        .screen { width: min(78%, 17rem); }
+        .screen-pair { gap: 0.7rem; }
+        .screen { flex-basis: 48%; width: 48%; }
+        .screen-pair .screen:only-child { flex-basis: min(100%, 19rem); width: min(100%, 19rem); }
         .practice-grid { grid-template-columns: 1fr; }
         .practice-card { min-height: 13rem; }
         .practice-card span { margin-bottom: 2rem; }
@@ -320,7 +311,7 @@
             </div>
           </div>
           <div class="device-hero">
-            <img src="assets/screens/home.jpg" width="736" height="1600" alt="Abby Speak home screen showing colourful IELTS speaking topic cards">
+            <img src="assets/screens/home.png" width="1206" height="2622" alt="Abby Speak home screen showing colourful IELTS speaking topic cards">
           </div>
         </div>
       </section>
@@ -349,7 +340,7 @@
             <p>Practise with sample answers that give you a clear direction, then make the language your own.</p>
           </div>
           <div class="screen-pair" aria-label="Answer practice screens">
-            <div class="screen front"><img src="assets/screens/sample-answer.jpg" width="736" height="1600" loading="lazy" alt="A sample answer with playback controls for speaking practice"></div>
+            <div class="screen front"><img src="assets/screens/sample-answer.png" width="1206" height="2622" loading="lazy" alt="A sample answer with playback controls for speaking practice"></div>
           </div>
         </div>
       </section>
@@ -362,8 +353,8 @@
             <p>Explore topic vocabulary and ready-to-adapt sentence patterns, so your answers feel clear, natural, and your own.</p>
           </div>
           <div class="screen-pair" aria-label="Vocabulary and useful sentence screens">
-            <div class="screen back"><img src="assets/screens/vocabulary.jpg" width="736" height="1600" loading="lazy" alt="Topic vocabulary cards with definitions and example sentences"></div>
-            <div class="screen front"><img src="assets/screens/useful-sentences.jpg" width="736" height="1600" loading="lazy" alt="Useful sentence templates displayed in the Abby Speak app"></div>
+            <div class="screen back"><img src="assets/screens/vocabulary.png" width="1206" height="2622" loading="lazy" alt="Topic vocabulary cards with definitions and example sentences"></div>
+            <div class="screen front"><img src="assets/screens/useful-sentences.png" width="1206" height="2622" loading="lazy" alt="Useful sentence templates displayed in the Abby Speak app"></div>
           </div>
         </div>
       </section>
@@ -393,8 +384,8 @@
             <p>From reminders to activity history, Abby Speak keeps your small wins close enough to keep going.</p>
           </div>
           <div class="screen-pair" aria-label="Progress tracking screens">
-            <div class="screen back"><img src="assets/screens/settings.jpg" width="736" height="1600" loading="lazy" alt="Reminder settings screen in Abby Speak"></div>
-            <div class="screen front"><img src="assets/screens/days-streak.jpg" width="736" height="1600" loading="lazy" alt="Days streak screen with an activity calendar"></div>
+            <div class="screen back"><img src="assets/screens/settings.png" width="1206" height="2622" loading="lazy" alt="Reminder settings screen in Abby Speak"></div>
+            <div class="screen front"><img src="assets/screens/days-streak.png" width="1206" height="2622" loading="lazy" alt="Days streak screen with an activity calendar"></div>
           </div>
         </div>
       </section>
@@ -409,7 +400,7 @@
             <p>Save speaking prompts you want to practise again, so the next focused session is always within reach.</p>
           </div>
           <div class="library-screens single">
-            <figure><img src="assets/screens/favorites.jpg" width="736" height="1600" loading="lazy" alt="Favourite IELTS speaking questions in Abby Speak"></figure>
+            <figure><img src="assets/screens/favorites.png" width="1206" height="2622" loading="lazy" alt="Favourite IELTS speaking questions in Abby Speak"></figure>
           </div>
         </div>
       </section>
